@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Bank Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #image-gallery, #terms-page, #price-page {
+            display: none;
+            text-align: center;
+        }
+        #image-gallery img {
+            width: 300px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #terms-page {
+            display: none;
+        }
+        .terms-content {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .terms-content p {
+            margin-bottom: 20px;
+        }
+        .price-table {
+            background-color: #fff;
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        .price-table th {
+            background-color: #28a745;
+            color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Image Gallery -->
+    <div id="image-gallery">
+        <h1>Select a Power Bank</h1>
+        <img src="your-image1.jpg" alt="Power Bank 1" onclick="showTermsPage()">
+        <img src="your-image2.jpg" alt="Power Bank 2" onclick="showTermsPage()">
+        <img src="your-image3.jpg" alt="Power Bank 3" onclick="showTermsPage()">
+    </div>
+
+    <!-- Terms and Conditions Page -->
+    <div id="terms-page">
+        <div class="terms-content">
+            <h2>Terms and Conditions</h2>
+            <p>Power banks are rented and expected to be returned within a maximum of 7 days. The final price is calculated based on how long you rented the power bank for, and a £1500 deposit needs to be paid. You will be returned your due money within 10 days of returning the power bank.</p>
+            <button onclick="acceptTerms()">Accept Terms</button>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <!-- Price Page -->
+    <div id="price-page">
+        <h1>Power Bank Rental Prices</h1>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Time Duration</th>
+                    <th>Price (L.E)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First 15 minutes</td>
+                    <td>30 L.E</td>
+                </tr>
+                <tr>
+                    <td>30 minutes</td>
+                    <td>60 L.E</td>
+                </tr>
+                <tr>
+                    <td>45 minutes</td>
+                    <td>75 L.E</td>
+                </tr>
+                <tr>
+                    <td>1 hour</td>
+                    <td>90 L.E</td>
+                </tr>
+                <tr>
+                    <td>Every additional hour</td>
+                    <td>50 L.E</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Show terms page when an image is clicked
+        function showTermsPage() {
+            document.getElementById("image-gallery").style.display = "none";
+            document.getElementById("terms-page").style.display = "block";
+        }
+
+        // Accept terms and show price page
+        function acceptTerms() {
+            document.getElementById("terms-page").style.display = "none";
+            document.getElementById("price-page").style.display = "block";
+        }
+
+        // Go back to image gallery
+        function goBack() {
+            document.getElementById("terms-page").style.display = "none";
+            document.getElementById("image-gallery").style.display = "block";
+        }
+
+        // Initial load
+        document.getElementById("image-gallery").style.display = "block";
+    </script>
+</body>
+</html>
